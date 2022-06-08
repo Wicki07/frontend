@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       title: "",
-    }
+    };
   },
   methods: {},
   created() {

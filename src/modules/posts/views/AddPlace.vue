@@ -115,8 +115,8 @@ export default {
       alertType: "error",
     };
   },
-  created(){
-    window.scrollTo(0,0);
+  created() {
+    window.scrollTo(0, 0);
   },
   methods: {
     removeFile(idx) {
@@ -145,7 +145,7 @@ export default {
             setTimeout(() => {
               this.alert = false;
             }, 5000);
-            this.imagesUrls = []
+            this.imagesUrls = [];
             this.$refs.form.reset();
             this.$refs.localizationselect.markerLabel;
             this.$refs.localizationselect.markerLatLng = [0, 0];

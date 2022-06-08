@@ -10,31 +10,31 @@ const moduleRoute = {
   children: [
     {
       path: "addplace",
-      component: AddPlace
+      component: AddPlace,
     },
     {
       path: "state",
-      component: StateChoose
+      component: StateChoose,
     },
     {
       path: "list/:state?",
       props: true,
-      component: PlacesList
+      component: PlacesList,
     },
     {
       path: "list",
       props: true,
-      component: PlacesList
+      component: PlacesList,
     },
     {
-      name: 'place',
+      name: "place",
       path: "place/:title?",
       props: true,
-      component: PlaceView
+      component: PlaceView,
     },
-  ]
+  ],
 };
 
-export default router => {
+export default (router) => {
   router.addRoute(moduleRoute);
 };

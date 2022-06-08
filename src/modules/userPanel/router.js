@@ -11,26 +11,26 @@ const moduleRoute = {
     {
       name: "main",
       path: ":user/",
-      component: Dashboard
+      component: Dashboard,
     },
     {
       name: "passwordchange",
       path: "settings/passwordchange",
-      component: PasswordChange
+      component: PasswordChange,
     },
     {
       path: "settings/manageposts",
-      component: ManagePosts
+      component: ManagePosts,
     },
     {
       name: "editplace",
       path: "settings/manageposts/:title?",
       props: true,
-      component: EditPlace
+      component: EditPlace,
     },
-  ]
+  ],
 };
 
-export default router => {
+export default (router) => {
   router.addRoute(moduleRoute);
 };

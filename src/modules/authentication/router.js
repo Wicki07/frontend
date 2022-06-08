@@ -9,20 +9,19 @@ const moduleRoute = {
   children: [
     {
       path: "login",
-      component: Login
+      component: Login,
     },
     {
       path: "register",
-      component: Register
+      component: Register,
     },
     {
       path: "activate/:code",
       component: Activate,
     },
-
-  ]
+  ],
 };
 
-export default router => {
+export default (router) => {
   router.addRoute(moduleRoute);
 };

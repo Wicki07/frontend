@@ -223,11 +223,9 @@ export default {
       });
     },
     async deleteComment(id) {
-      await axiosAPI
-        .delete(`/api/comments/${id}`)
-        .then(() => {
-          this.$emit("getComments");
-        })
+      await axiosAPI.delete(`/api/comments/${id}`).then(() => {
+        this.$emit("getComments");
+      });
     },
   },
 };

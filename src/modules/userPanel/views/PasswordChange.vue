@@ -8,10 +8,8 @@
       transition="slide-x-transition"
       >{{ alertMsg }}</v-alert
     >
-    <v-btn class="mt-5" color="primary" text @click="() => $router.go(-1)">      
-      <v-icon left>
-        mdi-chevron-left
-      </v-icon>
+    <v-btn class="mt-5" color="primary" text @click="() => $router.go(-1)">
+      <v-icon left> mdi-chevron-left </v-icon>
       Wróć
     </v-btn>
     <p class="text-h4 my-5">Zmień hasło</p>
@@ -81,7 +79,7 @@ export default {
     }),
   },
   created() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   },
   methods: {
     ...mapActions(["setUser"]),
@@ -99,7 +97,7 @@ export default {
             this.alertType = "success";
             setTimeout(() => {
               this.alert = false;
-              this.$router.go(-1)
+              this.$router.go(-1);
             }, 5000);
           })
           .catch(() => {

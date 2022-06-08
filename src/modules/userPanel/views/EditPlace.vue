@@ -159,7 +159,7 @@ export default {
     };
   },
   async created() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     if (this.place) {
       this.placeLocal = this.place;
       await axiosAPI
@@ -199,7 +199,7 @@ export default {
           setTimeout(() => {
             this.alert = false;
           }, 5000);
-          this.$router.go(-1)
+          this.$router.go(-1);
         })
         .catch(() => {
           this.alertMsg = "Coś poszło nie tak. Spróbuj ponownie";

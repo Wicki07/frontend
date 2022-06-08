@@ -16,10 +16,14 @@
               height="200px"
             ></v-img>
             <v-card-title class="mb-0 pb-0">Województwo</v-card-title>
-            <v-card-title class="mt-0 pt-0">{{ capitalizeFirstLetter(state) }}</v-card-title>
+            <v-card-title class="mt-0 pt-0">{{
+              capitalizeFirstLetter(state)
+            }}</v-card-title>
             <v-card-subtitle> x miejsc </v-card-subtitle>
             <v-card-actions>
-              <v-btn color="orange lighten-2" text :to="`list/${state}`"> Wybierz </v-btn>
+              <v-btn color="orange lighten-2" text :to="`list/${state}`">
+                Wybierz
+              </v-btn>
               <v-spacer></v-spacer>
               <v-btn icon>
                 <v-icon>mdi-chevron-right</v-icon>
@@ -61,7 +65,7 @@ export default {
     };
   },
   created() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   },
   methods: {
     capitalizeFirstLetter(string) {

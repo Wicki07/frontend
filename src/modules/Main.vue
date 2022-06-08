@@ -205,9 +205,13 @@ export default {
       );
       this.states = this.states.map((val) => ({
         ...val,
-        amount: fomatedArray[val.state]?.count ? fomatedArray[val.state].count : 0,
-        image: fomatedArray[val.state]?.attachment ? `http://127.0.0.1:8000${fomatedArray[val.state].attachment}` : "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
-      }))
+        amount: fomatedArray[val.state]?.count
+          ? fomatedArray[val.state].count
+          : 0,
+        image: fomatedArray[val.state]?.attachment
+          ? `http://127.0.0.1:8000${fomatedArray[val.state].attachment}`
+          : "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+      }));
     });
   },
   methods: {

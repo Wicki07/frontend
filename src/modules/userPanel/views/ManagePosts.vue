@@ -97,7 +97,7 @@ export default {
     }),
   },
   async created() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     await this.getPlaces();
   },
   methods: {
@@ -128,7 +128,7 @@ export default {
     min-width: 420px;
   }
   .row-size {
-  max-width: 880px;
-}
+    max-width: 880px;
+  }
 }
 </style>

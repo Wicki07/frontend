@@ -52,7 +52,7 @@ export default {
     localization: {
       type: String,
       default: "",
-    }
+    },
   },
   data() {
     return {
@@ -67,29 +67,32 @@ export default {
       markerLabel: "",
     };
   },
-  async created(){
-    if(this.localization) {
-      await this.assignMarker(this.localization.split(',')[0], this.localization.split(',')[1])
+  async created() {
+    if (this.localization) {
+      await this.assignMarker(
+        this.localization.split(",")[0],
+        this.localization.split(",")[1]
+      );
     }
   },
-  watch:{
+  watch: {
     async localization(newVal) {
-      await this.assignMarker(newVal.split(',')[0], newVal.split(',')[1])
-    }
+      await this.assignMarker(newVal.split(",")[0], newVal.split(",")[1]);
+    },
   },
   methods: {
     async handleClick(e) {
-      await this.assignMarker(e.latlng.lat, e.latlng.lng)
+      await this.assignMarker(e.latlng.lat, e.latlng.lng);
     },
     mapReady() {
       var map = this.$refs.myMap.mapObject;
       const search = new GeoSearchControl({
         provider: new OpenStreetMapProvider({
-        params: {
-          "accept-language": "pl", 
-          addressdetails: 1,
-        },
-      }),
+          params: {
+            "accept-language": "pl",
+            addressdetails: 1,
+          },
+        }),
         style: "bar",
         searchLabel: "Wpisz adres",
       });
@@ -104,18 +107,18 @@ export default {
     async assignMarker(lat, lng) {
       const provider = new OpenStreetMapProvider({
         params: {
-          "accept-language": "pl", 
+          "accept-language": "pl",
           addressdetails: 1,
         },
       });
       this.markerAdded = true;
       this.markerLatLng = [lat, lng];
-      this.center = [lat, lng];      
+      this.center = [lat, lng];
       const results = await provider.search({
         query: lat + ", " + lng,
       });
       this.markerLabel = results[0].raw.address;
-    }
+    },
   },
 };
 </script>

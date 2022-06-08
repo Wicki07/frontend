@@ -52,19 +52,15 @@
       </v-col>
     </v-row>
     <v-dialog v-model="dialog" persistent max-width="400">
-
       <v-card>
-        <v-card-title class="text-h5">
-          Pomyślnie zarejestrowno
-        </v-card-title>
+        <v-card-title class="text-h5"> Pomyślnie zarejestrowno </v-card-title>
         <v-card-text
-          >Na podany mail został wysłany link do aktywacji konta. Konto nieaktywowane zostanie usunięte po 24h.</v-card-text
+          >Na podany mail został wysłany link do aktywacji konta. Konto
+          nieaktywowane zostanie usunięte po 24h.</v-card-text
         >
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="confirmDialog">
-            Zatwierdź
-          </v-btn>
+          <v-btn color="primary" text @click="confirmDialog"> Zatwierdź </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -117,7 +113,7 @@ export default {
           .then((res) => {
             localStorage.setItem("token", res.data.token);
             this.setUser(res.data.user);
-            this.dialog = true
+            this.dialog = true;
           })
           .catch((error) => {
             this.alertMsg = error.response.data.username[0];
@@ -130,9 +126,9 @@ export default {
       }
     },
     confirmDialog() {
-      this.dialog = false
+      this.dialog = false;
       window.location.replace("http://localhost:8080/");
-    }
+    },
   },
 };
 </script>

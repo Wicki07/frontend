@@ -45,7 +45,20 @@
           >Województwo {{ capitalizeFirstLetter(state) }}</v-card-title
         >
         <v-row class="mt-3 mb-3" v-for="place of places" :key="place.id">
-          <v-card class="mx-auto" @click="() => {$router.push({ name: 'place', params: { place: place, title: place.title.replace(/\s/g, '-') + `-${place.id}` } })}">
+          <v-card
+            class="mx-auto"
+            @click="
+              () => {
+                $router.push({
+                  name: 'place',
+                  params: {
+                    place: place,
+                    title: place.title.replace(/\s/g, '-') + `-${place.id}`,
+                  },
+                });
+              }
+            "
+          >
             <v-row>
               <v-col cols="0" md="4">
                 <v-img
@@ -159,8 +172,8 @@ export default {
     },
   },
   async created() {
-    await this.getPlaces()
-    window.scrollTo(0,0);
+    await this.getPlaces();
+    window.scrollTo(0, 0);
   },
   methods: {
     async getPlaces() {

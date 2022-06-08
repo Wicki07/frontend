@@ -1,4 +1,3 @@
-
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 export default {
   data() {
